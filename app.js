@@ -3,6 +3,9 @@ var app = express ();
 var bodyParser =  require ('body-parser');
 var mongoose = require('mongoose');
 
+var port = process.env.PORT || 3000;
+
+
 app.use(bodyParser.json({type:"application/json"}));
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -87,7 +90,6 @@ app.get ('/api/horses/:_id',function(req, res){
 
 
 
-
-app.listen(3000);
+app.listen(port);
 console.log('running on port 3000...');
 
