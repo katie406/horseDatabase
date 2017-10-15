@@ -2,9 +2,6 @@ var express = require('express');
 var app = express ();
 var bodyParser =  require ('body-parser');
 var mongoose = require('mongoose');
-var axios = require('axios');
-var react = require('react');
-var babel = require('babel');
 
 //static file using express 
 
@@ -18,7 +15,7 @@ app.set ('port',port);
 
 app.use(bodyParser.json({type:"application/json"}));
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 var Breeds = require('./models/breeds.js');
 var Horses = require('./models/horses.js');
