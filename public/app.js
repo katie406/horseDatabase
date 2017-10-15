@@ -22,7 +22,7 @@ class BreedsList extends React.Component {
   
     render() {
       let breeds = this.state.breeds.map( (breeds) => {
-        return <li key={breeds._id}>{ breeds.name }</li>
+        return <li key = {breeds._id}>{ breeds.name }</li>
       });
       
       return (
