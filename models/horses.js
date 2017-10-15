@@ -32,10 +32,10 @@ var horsesSchema = mongoose.Schema({
 var Horses = module.exports = mongoose.model('Horses',horsesSchema);
 
 
-// get horses
-//module.exports.getHorses = function(callback, limit){
- // Horses.find(callback).limit(limit);
-//}
+//get horses
+module.exports.getHorses = function(callback, limit){
+  Horses.find(callback).limit(limit);
+}
 
 // get horse by id
 //module.exports.getHorsesById = function(id, callback){
