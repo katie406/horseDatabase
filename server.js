@@ -13,7 +13,6 @@ var port = process.env.PORT;
 app.set ('port',port);
 
 
-
 app.use(bodyParser.json({type:"application/json"}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
