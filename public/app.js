@@ -1,18 +1,18 @@
 class BreedsList extends React.Component {
   
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.state = {
         breeds: []
       };
     }
-  
+  //React 
     componentWillMount() {
       axios.get('/api/breeds')
         .then((response) => {
-          console.log(response.data)
+          console.log(response)
           this.setState({
-            breeds: response.data
+            breeds: response
           })
         })
         .catch((error) => {
@@ -21,8 +21,8 @@ class BreedsList extends React.Component {
     }
   
     render() {
-      let breeds = this.state.breeds.map( (breeds) => {
-        return <li key = {breeds._id}>{ breeds.name }</li>
+      let breedsItems = this.state.breeds.map( (breeds) => {
+        return <li>{ breed.name }</li>
       });
       
       return (
@@ -34,6 +34,6 @@ class BreedsList extends React.Component {
   }
   
   ReactDOM.render(
-    <BreedsList />,
-    document.getElementById('breeds')
+    <BreedsList/>,
+    document.getElementById("breeds")
   );

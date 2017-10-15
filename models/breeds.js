@@ -15,9 +15,9 @@ var Breeds = module.exports = mongoose.model('Breeds',breedsSchema);
 
 
 // get breeds
-//module.exports.getBreeds = function(callback, limit){
-  //Breeds.find(callback).limit(limit);
-//}
+module.exports.getBreeds = function(callback, limit){
+  Breeds.find(callback).limit(limit);
+}
 
 // Add Breed
 //module.exports.addBreeds = function(breeds, callback){
