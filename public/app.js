@@ -1,4 +1,4 @@
-class Breeds extends React.Component {
+class BreedsList extends React.Component {
   
     constructor() {
       super();
@@ -21,19 +21,19 @@ class Breeds extends React.Component {
     }
   
     render() {
-      let breeds = this.state.breeds.map( (book) => {
-        return <li key={breeds._id}>{ breeds.title }</li>
+      let breeds = this.state.breeds.map( (breeds) => {
+        return <li key={breeds._id}>{ breeds.name }</li>
       });
       
       return (
         <ul>
-          { breeds }
+          { breedsItems }
         </ul>
       );
     }
   }
   
   ReactDOM.render(
-    <Breeds />,
+    <BreedsList />,
     document.getElementById('breeds')
   );

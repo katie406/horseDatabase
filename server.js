@@ -17,8 +17,8 @@ app.use(bodyParser.json({type:"application/json"}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-Breeds = require('./models/breeds.js');
-Horses = require('./models/horses.js');
+var Breeds = require('./models/breeds.js');
+var Horses = require('./models/horses.js');
 
 //connect to Mongoose
 //mongoose.connect ('mongodb://localhost/horses');
