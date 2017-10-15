@@ -4,14 +4,24 @@
   "description": "Horse Database",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "*",
+    "axios": "^0.16.2",
     "body-parser": "*",
-    "mongoose": "*"
+    "express": "*",
+    "mongoose": "*",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "author": "Katie Pederson",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "presets": [
+      "env"
+    ]
+  }
 }

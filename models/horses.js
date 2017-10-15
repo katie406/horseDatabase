@@ -37,7 +37,7 @@ module.exports.getHorses = function(callback, limit){
   Horses.find(callback).limit(limit);
 }
 
-// get horse
+// get horse by id
 module.exports.getHorsesById = function(id, callback){
   Horses.findById(id, callback);
 }

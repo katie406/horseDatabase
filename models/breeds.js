@@ -23,6 +23,13 @@ module.exports.getBreeds = function(callback, limit){
 module.exports.addBreeds = function(breeds, callback){
   Breeds.create(breeds, callback);
 }
+// Update Breed
+module.exports.updateBreeds = function(id, breeds, options, callback){
+  var query = {_id: id};
+  Breeds.findOneAndUpdate(query,breeds, options, callback);
+}
+
+
 // Delete Breed
 module.exports.removeBreeds = function(id, callback){
   var query = {_id: id};
