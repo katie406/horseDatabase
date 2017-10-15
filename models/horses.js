@@ -38,10 +38,10 @@ var Horses = module.exports = mongoose.model('Horses',horsesSchema);
 //}
 
 // get horse by id
-module.exports.getHorsesById = function(id, callback){
-  Horses.findById(id, callback);
-}
+//module.exports.getHorsesById = function(id, callback){
+  //Horses.findById(id, callback);
+//}
 // Add horse
-module.exports.addHorses = function(horses, callback){
-  Horses.create(horses, callback);
-}
+//module.exports.addHorses = function(horses, callback){
+ // Horses.create(horses, callback);
+//}
