@@ -12,7 +12,7 @@ class BreedsList extends React.Component {
         .then((response) => {
           console.log(response)
           this.setState({
-            breeds: response
+            breeds: response.data
           })
         })
         .catch((error) => {
@@ -21,8 +21,8 @@ class BreedsList extends React.Component {
     }
   
     render() {
-      let breedsItems = this.state.breeds.map( (breeds) => {
-        return <li>{ breed.name }</li>
+      let breedsItems = this.state.breeds.map( (breed) => {
+        return <li key={ breed._id }>{ breed.name }</li>
       });
       
       return (

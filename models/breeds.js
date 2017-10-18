@@ -20,19 +20,19 @@ module.exports.getBreeds = function(callback, limit){
 }
 
 // Add Breed
-//module.exports.addBreeds = function(breeds, callback){
-  //Breeds.create(breeds, callback);
-//}
+module.exports.addBreeds = function(breeds, callback){
+  Breeds.create(breeds, callback);
+}
 // Update Breed
-//module.exports.updateBreeds = function(id, breeds, options, callback){
-  //var query = {_id: id};
-  //Breeds.findOneAndUpdate(query,breeds, options, callback);
-//}
+module.exports.updateBreeds = function(id, breeds, options, callback){
+  var query = {_id: id};
+  Breeds.findOneAndUpdate(query,breeds, options, callback);
+}
 
 
 // Delete Breed
-//module.exports.removeBreeds = function(id, callback){
-  //var query = {_id: id};
-  //Breeds.remove(query, callback);
+module.exports.removeBreeds = function(id, callback){
+  var query = {_id: id};
+  Breeds.remove(query, callback);
 
 //}

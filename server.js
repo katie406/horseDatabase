@@ -4,34 +4,27 @@ var bodyParser =  require ('body-parser');
 var mongoose = require('mongoose');
 
 //static file using express 
-
 var path = require('path');
 var app = express();
-
-
-var port = process.env.PORT;
+var port = 3000;////process.env.PORT || 3000; // process.env.PORT used to determine right port for Heroku deployment
 app.set ('port',port);
-
-
 app.use(bodyParser.json({type:"application/json"}));
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
+//app.use(express.static(path.join(__dirname, 'public')));
 var Breeds = require('./models/breeds.js');
 var Horses = require('./models/horses.js');
 
 //connect to Mongoose
 //mongoose.connect ('mongodb://localhost/horses');
 //var db = mongoose.connection
-
 var promise = mongoose.connect('mongodb://katie406:firemissy.406@ds013475.mlab.com:13475/users123', {
   useMongoClient: true,
 });
-
 app.get('/', function(req, res){
   res.send('Please use /api/horses or /api/breeds');
 });
-
 app.get ('/api/breeds',function(req, res){
    Breeds.getBreeds(function(err, breeds){
      if(err){
@@ -40,7 +33,6 @@ app.get ('/api/breeds',function(req, res){
      res.json(breeds);
    });
 });
-
 app.post('/api/breeds',function(req, res, next){
   var breeds = req.body;
   console.log(breeds);
@@ -52,7 +44,6 @@ app.post('/api/breeds',function(req, res, next){
     }
   });
 });
-
 app.put('/api/breeds/:_id', function(req, res, next){
   var id =req.params._id;
   var breeds = req.body;
@@ -64,7 +55,6 @@ app.put('/api/breeds/:_id', function(req, res, next){
     }
   });
 });
-
 app.delete('/api/breeds/:_id', function(req, res){
   var id =req.params._id;
   Breeds.removeBreeds(id, function(err, Breeds){
@@ -75,9 +65,6 @@ app.delete('/api/breeds/:_id', function(req, res){
     }
   })
 });
-
-
-
 app.get ('/api/horses',function(req, res){
   Horses.getHorses(function(err, horses){
     if(err){
@@ -86,7 +73,6 @@ app.get ('/api/horses',function(req, res){
     res.json(horses);
   });
 });
-
 app.get ('/api/horses/:_id',function(req, res){
   Horses.getHorsesById(req.params._id, function(err, horses){
     if(err){
@@ -95,9 +81,5 @@ app.get ('/api/horses/:_id',function(req, res){
     res.json(horses);
   });
 });
-
-
-
 app.listen(app.get('port'));
 console.log('running on port 3000...');
-
